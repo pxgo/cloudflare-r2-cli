@@ -25,7 +25,7 @@ const s3Client = new S3Client({
   credentials: {
     accessKeyId: ACCESS_KEY,
     secretAccessKey: SECRET_KEY
-  }
+  },
 });
 
 // 上传文件
@@ -37,6 +37,7 @@ async function uploadFile(bucket: string, filePath: string, key?: string): Promi
     Body: fileStream
   };
 
+  console.log(`开始上传文件 ${filePath} 到 ${bucket} 中的 ${key || path.basename(filePath)}...`);
   try {
     await s3Client.send(new PutObjectCommand(params));
     console.log(`文件 ${filePath} 上传成功到 ${bucket} 中的 ${key || path.basename(filePath)}`);

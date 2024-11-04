@@ -20,5 +20,8 @@
   },
   "author": {
     "name": "pxgo"
+  },
+  "scripts": {
+    "build": "bun build index.ts --compile  --outfile=./build/r2"
   }
 }

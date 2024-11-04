@@ -33,6 +33,11 @@ export R2_ACCESS_KEY="your_access_key"
 export R2_SECRET_KEY="your_secret_key"
 ```
 
+4. 编译
+```bash
+bun build index.ts --compile --outfile=build/r2
+```
+
 ## 使用说明
 
 可用命令:
@@ -44,3 +49,9 @@ export R2_SECRET_KEY="your_secret_key"
 - `rename <bucketName> <oldKey> <newKey>` - 修改文件的目录或文件名
 - `delete <bucketName> <key>` - 删除文件
 - `buckets` - 列出所有存储桶
+
+例子：
+
+```bash
+r2 upload books ~/JavaScript从入门到入狱.pdf 武林秘籍.pdf
+```
